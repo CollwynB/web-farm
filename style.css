@@ -1,0 +1,60 @@
+body, html {
+    background-color: rgb(173, 214, 112);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.field {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: fit-content;
+    transform-style: preserve-3d;
+    transform: rotateX(55deg) rotateZ(45deg);
+    margin: auto;
+}
+
+
+
+.tile {
+    width: 128px;
+    height: 128px;
+    border: solid 2px rgba(0, 0, 0, 0.171);
+    transition: .2s;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(138, 91, 48);
+}
+
+.tile:hover {
+    border: solid 2px black;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.171);
+    z-index: 1;
+}
+
+.tile > img {
+    transform: rotateX(-45deg) rotateZ(-45deg);
+    width: 64px;
+    height: 64px;
+    image-rendering: pixelated;
+}
+
+div:hover > img {
+    animation-name: wiggle;
+    animation-timing-function: linear;
+    animation-duration: .2s; 
+}
+
+@keyframes wiggle {
+    33% {
+        transform: rotateX(-45deg) rotateZ(-40deg);
+    }
+    66% {
+        transform: rotateX(-45deg) rotateZ(-50deg);
+    }
+}
+
+#game-space {
+    border: 4px solid burlywood;
+}
+
